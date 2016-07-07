@@ -2840,9 +2840,7 @@ var _getItemAt,
 		};
 		img.onload = onComplete;
 		img.onerror = function() {
-			// Custome Event to patch when image loading error
-			_shout('imageLoadError', item);
-			// item.loadError = true;
+			item.loadError = true;
 			onComplete();
 		};
 
