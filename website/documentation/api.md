@@ -46,8 +46,8 @@ pswp.next();
 pswp.prev();
 
 // Update gallery size
-// @param  {boolean} `force` If you set it to `true`, 
-// 							size of the gallery will be updated 
+// @param  {boolean} `force` If you set it to `true`,
+// 							size of the gallery will be updated
 // 							even if viewport size hasn't changed.
 pswp.updateSize(force);
 
@@ -55,7 +55,7 @@ pswp.updateSize(force);
 pswp.close();
 
 // Destroy gallery,
-// automatically called after close() 
+// automatically called after close()
 pswp.destroy()
 
 // Zoom current slide to (optionally with animation)
@@ -73,16 +73,16 @@ pswp.destroy()
 pswp.zoomTo(destZoomLevel, centerPoint, speed, easingFn, updateFn);
 
 // Apply zoom and pan to the current slide
-// 
+//
 // @param   {number} `zoomLevel`
 // @param   {int}    `panX`
 // @param   {int}    `panY`
-// 
+//
 // For example: `pswp.applyZoomPan(1, 0, 0)`
 // will zoom current image to the original size
 // and will place it on top left corner
-// 
-// 
+//
+//
 pswp.applyZoomPan(zoomLevel, panX, panY);
 ```
 
@@ -168,8 +168,13 @@ pswp.listen('beforeChange', function() { });
 pswp.listen('afterChange', function() { });
 
 // Image loaded
-pswp.listen('imageLoadComplete', function(index, item) { 
+pswp.listen('imageLoadComplete', function(index, item) {
 	// index - index of a slide that was loaded
+	// item - slide object
+});
+
+// Image loaded
+pswp.listen('imageLoadError', function(item) {
 	// item - slide object
 });
 
@@ -209,7 +214,7 @@ pswp.listen('initialZoomOutEnd', function() { });
 
 
 // Allows overriding vertical margin for individual items
-pswp.listen('parseVerticalMargin', function(item) { 
+pswp.listen('parseVerticalMargin', function(item) {
 	// For example:
 	var gap = item.vGap;
 
@@ -273,12 +278,12 @@ pswp.listen('preventDragEvent', function(e, isDown, preventObj) {
 // -------------------------
 
 // Share link clicked
-pswp.listen('shareLinkClick', function(e, target) { 
+pswp.listen('shareLinkClick', function(e, target) {
 	// e - original click event
 	// target - link that was clicked
 
-	// If `target` has `href` attribute and 
-	// does not have `download` attribute - 
+	// If `target` has `href` attribute and
+	// does not have `download` attribute -
 	// share modal window will popup
 });
 
@@ -291,9 +296,9 @@ To add, edit, or remove slides after PhotoSwipe is opened, you just need to modi
 
 ```javascript
 pswp.items.push({
-    src: "path/to/image.jpg", 
+    src: "path/to/image.jpg",
     w:1200,
-    h:500 
+    h:500
 });
 ```
 
@@ -314,4 +319,3 @@ Otherwise, you don't need to do anything else. Except, maybe, calling `pswp.ui.u
 - This technique is used to [serve responsive images](responsive-images.html).
 
 Some method or property is missing? Found a grammatical mistake? Know how this page can be improved? [Please suggest an edit!](https://github.com/dimsemenov/PhotoSwipe/blob/master/website/documentation/api.md)
-
