@@ -165,6 +165,9 @@ var _getItemAt,
 		};
 		img.onload = onComplete;
 		img.onerror = function() {
+			fallBackSrc = item.src.replace('_500.jpg', '.jpg');
+      console.log(fallBackSrc);
+      item.src = fallBackSrc;
 			item.loadError = true;
 			onComplete();
 		};
