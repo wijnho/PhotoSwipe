@@ -2840,7 +2840,7 @@ var _getItemAt,
 		};
 		img.onload = onComplete;
 		img.onerror = function() {
-			fallBackSrc = item.src.replace('_500.jpg', '.jpg');
+			var fallBackSrc = item.src.replace('_500.jpg', '.jpg');
 			item.img.src = fallBackSrc;
 			item.src = fallBackSrc;
 			// item.loadError = true;
